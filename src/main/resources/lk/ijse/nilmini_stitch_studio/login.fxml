@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="800" prefWidth="1550"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="lk.ijse.nilmini_stitch_studio.controller.LoginController"
+            style="-fx-background-color:#f3f4f6;">
+
+    <center>
+        <AnchorPane>
+
+            <!-- LOGIN CARD -->
+            <VBox layoutX="525" layoutY="120"
+                  prefWidth="500" prefHeight="560"
+                  alignment="CENTER"
+                  spacing="20"
+                  style="-fx-background-color:white;
+                         -fx-background-radius:18;
+                         -fx-padding:30;
+                         -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 20, 0, 0, 8);">
+
+                <!-- LOGO -->
+                <ImageView fitHeight="120" preserveRatio="true">
+                    <image>
+                        <Image url="@images/logo crop.png"/>
+                    </image>
+                </ImageView>
+
+                <!-- TITLE -->
+                <Text text="Sign in"
+                      style="-fx-font-size:26px; -fx-font-weight:bold;"/>
+
+                <!-- USERNAME -->
+                <VBox spacing="6" prefWidth="380">
+                    <Label text="Username"/>
+                    <TextField fx:id="usernameField"
+                               prefHeight="40"
+                               style="-fx-background-radius:8;
+                                      -fx-border-radius:8;
+                                      -fx-border-color:#d1d5db;"/>
+                </VBox>
+
+                <!-- PASSWORD -->
+                <VBox spacing="6" prefWidth="380">
+                    <Label text="Password"/>
+                    <PasswordField fx:id="passwordField"
+                                   prefHeight="40"
+                                   style="-fx-background-radius:8;
+                                          -fx-border-radius:8;
+                                          -fx-border-color:#d1d5db;"/>
+                </VBox>
+
+                <!-- LOGIN BUTTON -->
+                <Button text="Sign in"
+                        onAction="#login"
+                        prefWidth="380"
+                        prefHeight="45"
+                        style="-fx-background-color:#2563eb;
+                               -fx-text-fill:white;
+                               -fx-font-size:16px;
+                               -fx-font-weight:bold;
+                               -fx-background-radius:8;"/>
+
+                <!-- FOOTER -->
+                <Text text="Nilmini Stitch Studio"
+                      style="-fx-fill:#6b7280; -fx-font-size:13px;"/>
+
+            </VBox>
+
+        </AnchorPane>
+    </center>
+
+</BorderPane>

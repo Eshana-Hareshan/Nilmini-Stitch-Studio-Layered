@@ -1,0 +1,44 @@
+.sidebar{
+    -fx-background-color: linear-gradient(to bottom,#1e3a8a,#1e40af,#2563eb);
+    -fx-pref-width: 270;
+}
+
+.title{
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-fill: white;
+}
+
+.side-btn{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-padding: 12;
+    -fx-graphic-text-gap: 12;
+    -fx-background-radius: 8;
+}
+
+.side-btn:hover{
+    -fx-background-color: rgba(255,255,255,0.15);
+}
+
+.side-btn.active{
+    -fx-background-color: white;
+    -fx-text-fill: #1e40af;
+}
+
+.logout-btn{
+    -fx-background-color: #ef4444;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-padding: 12;
+    -fx-background-radius: 8;
+}
+
+.logout-btn:hover{
+    -fx-background-color: #dc2626;
+}
+
+.content-area{
+    -fx-background-color: #f1f5f9;
+}

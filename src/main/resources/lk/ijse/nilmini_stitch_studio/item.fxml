@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="729.6" prefWidth="1270.4"
+            style="-fx-background-color:#f3f4f6;"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="lk.ijse.nilmini_stitch_studio.controller.ItemController">
+
+    <!-- ================= HEADER ================= -->
+
+    <HBox alignment="CENTER_LEFT"
+          prefHeight="60"
+          style="-fx-background-color:white; -fx-border-color:#e5e7eb; -fx-border-width:0 0 1 0;"
+          AnchorPane.leftAnchor="0"
+          AnchorPane.rightAnchor="0"
+          AnchorPane.topAnchor="0">
+
+        <children>
+            <Text text=" Item Management"
+                  style="-fx-font-size:26px; -fx-font-weight:bold;" />
+        </children>
+
+    </HBox>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <GridPane hgap="20"
+              vgap="20"
+              AnchorPane.topAnchor="80"
+              AnchorPane.leftAnchor="20"
+              AnchorPane.rightAnchor="20"
+              AnchorPane.bottomAnchor="20">
+
+        <columnConstraints>
+            <ColumnConstraints percentWidth="35"/>
+            <ColumnConstraints percentWidth="65"/>
+        </columnConstraints>
+
+        <!-- ================= LEFT SIDE FORM ================= -->
+
+        <VBox spacing="20"
+              style="-fx-background-color:white; -fx-background-radius:12; -fx-padding:20;"
+              GridPane.columnIndex="0">
+
+            <Text text="Item Details"
+                  style="-fx-font-size:16px; -fx-font-weight:bold;" />
+
+            <!-- Category -->
+
+            <VBox spacing="8">
+
+                <Label text="Category"/>
+
+                <TextField fx:id="txtItemCategory"
+                           promptText="Enter item category"/>
+
+            </VBox>
+
+            <!-- Unit Price -->
+
+            <VBox spacing="8">
+
+                <Label text="Unit Price"/>
+
+                <TextField fx:id="txtItemUnitPrice"
+                           promptText="Enter unit price"/>
+
+            </VBox>
+
+            <!-- Quantity -->
+
+            <VBox spacing="8">
+
+                <Label text="Quantity"/>
+
+                <TextField fx:id="txtItemQuantity"
+                           promptText="Enter item quantity"/>
+
+            </VBox>
+
+            <!-- Buttons -->
+
+            <HBox alignment="TOP_RIGHT" spacing="10">
+
+                <Button text="Reset"
+                        onAction="#resetItem"
+                        style="-fx-background-color:#6b7280; -fx-text-fill:white;" />
+
+                <Button text="Save"
+                        onAction="#saveItem"
+                        style="-fx-background-color:#16a34a; -fx-text-fill:white;" />
+
+                <Button text="Update"
+                        onAction="#updateItem"
+                        style="-fx-background-color:#2563eb; -fx-text-fill:white;" />
+
+            </HBox>
+
+        </VBox>
+
+
+        <!-- ================= RIGHT SIDE TABLE ================= -->
+
+        <VBox spacing="15"
+              style="-fx-background-color:white; -fx-background-radius:12; -fx-padding:20;"
+              GridPane.columnIndex="1">
+
+            <Text text="Item List"
+                  style="-fx-font-size:16px; -fx-font-weight:bold;" />
+
+            <TableView fx:id="tblItem"
+                       VBox.vgrow="ALWAYS"
+                       style="-fx-background-color:#E9ECEF;">
+
+                <columns>
+
+                    <TableColumn fx:id="colItemCategory"
+                                 text="Category"
+                                 prefWidth="250"/>
+
+                    <TableColumn fx:id="colItemQty"
+                                 text="Stock Quantity"
+                                 prefWidth="180"/>
+
+                    <TableColumn fx:id="colItemUnitPrice"
+                                 text="Unit Selling Price"
+                                 prefWidth="180"/>
+
+                    <TableColumn fx:id="colAction"
+                                 text="Action"
+                                 prefWidth="150"/>
+
+                </columns>
+
+            </TableView>
+
+        </VBox>
+
+        <rowConstraints>
+            <RowConstraints/>
+        </rowConstraints>
+
+    </GridPane>
+
+</AnchorPane>

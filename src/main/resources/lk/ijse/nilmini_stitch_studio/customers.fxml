@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1229.0" style="-fx-background-color:#f1f5f9;" stylesheets="@css/customer.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.nilmini_stitch_studio.controller.CustomersController">
+
+    <!-- HEADER -->
+    <HBox alignment="CENTER_LEFT" prefHeight="65" style="-fx-background-color:white; -fx-border-color:#e5e7eb; -fx-border-width:0 0 1 0;" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+
+        <children>
+            <Text style="-fx-font-size:24px; -fx-font-weight:bold; -fx-fill:#1e3a8a;" text="Customer Management" />
+        </children>
+
+        <padding>
+            <Insets left="25" />
+        </padding>
+    </HBox>
+
+    <!-- MAIN GRID -->
+    <GridPane hgap="25" vgap="25" AnchorPane.bottomAnchor="25" AnchorPane.leftAnchor="25" AnchorPane.rightAnchor="25" AnchorPane.topAnchor="90">
+
+        <columnConstraints>
+            <ColumnConstraints percentWidth="35" />
+            <ColumnConstraints percentWidth="65" />
+        </columnConstraints>
+
+        <!-- CUSTOMER FORM CARD -->
+        <VBox spacing="18" styleClass="card" GridPane.columnIndex="0">
+
+            <Text styleClass="card-title" text="Customer Details" />
+
+            <VBox spacing="6">
+                <Label styleClass="form-label" text="Customer Name" />
+                <TextField fx:id="customerName" promptText="Enter customer name" styleClass="form-field" />
+            </VBox>
+
+            <VBox spacing="6">
+                <Label styleClass="form-label" text="Contact Number" />
+                <TextField fx:id="customerNumber" promptText="Enter contact number" styleClass="form-field" />
+            </VBox>
+
+            <HBox alignment="CENTER_RIGHT" spacing="10">
+
+                <Button onAction="#handleCustomerReset" styleClass="reset-btn" text="Reset" />
+
+                <Button onAction="#saveCustomer" styleClass="save-btn" text="Save" />
+
+                <Button onAction="#handleCustomerUpdate" styleClass="update-btn" text="Update" />
+
+            </HBox>
+
+            <HBox alignment="CENTER_RIGHT">
+                <Button onAction="#handlePrint" styleClass="print-btn" text="Print Report" />
+            </HBox>
+
+        </VBox>
+
+        <!-- CUSTOMER TABLE CARD -->
+        <VBox spacing="15" styleClass="card" GridPane.columnIndex="1">
+
+            <Text styleClass="card-title" text="Customer List" />
+
+            <TableView fx:id="tableCustomer" styleClass="table-view" VBox.vgrow="ALWAYS">
+
+                <columns>
+
+                    <TableColumn fx:id="colName" prefWidth="220" text="Customer Name" />
+
+                    <TableColumn fx:id="colNumber" prefWidth="200" text="Contact Number" />
+
+                    <TableColumn fx:id="colDate" prefWidth="180" text="Registered Date" />
+
+                    <TableColumn fx:id="colAction" prefWidth="120" text="Action" />
+
+                </columns>
+
+            </TableView>
+
+        </VBox>
+      <rowConstraints>
+         <RowConstraints />
+      </rowConstraints>
+
+    </GridPane>
+
+</AnchorPane>

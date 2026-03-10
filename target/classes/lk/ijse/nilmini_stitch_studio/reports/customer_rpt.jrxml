@@ -1,0 +1,63 @@
+<!-- Created with Jaspersoft Studio version 7.0.3.final using JasperReports Library version 7.0.3-41034ca841d452f3305ba55b9042260aaa1ab5dd  -->
+<jasperReport name="customer_rpt" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3e5cde6b-eb0f-4195-ab6b-90cf7bd511cb">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="nilmini_stitch_studio"/>
+	<query language="SQL"><![CDATA[SELECT * FROM customer]]></query>
+	<field name="c_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="c_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="c_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<field name="c_number" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="c_number"/>
+		<property name="com.jaspersoft.studio.field.label" value="c_number"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<field name="reg_date" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="reg_date"/>
+		<property name="com.jaspersoft.studio.field.label" value="reg_date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="69" splitType="Stretch">
+		<element kind="staticText" uuid="2aaae8ea-7fe5-4929-8a7d-10983d20ad70" x="150" y="14" width="270" height="40" forecolor="#0422B8" fontSize="30.0">
+			<text><![CDATA[Nilmini Stitch Studio]]></text>
+		</element>
+	</title>
+	<pageHeader height="59" splitType="Stretch">
+		<element kind="staticText" uuid="2e1d73c0-3820-4f2f-8e60-4918adfb2b11" x="40" y="10" width="200" height="41" fontSize="25.0">
+			<text><![CDATA[Customer Report]]></text>
+		</element>
+	</pageHeader>
+	<columnHeader height="61" splitType="Stretch">
+		<element kind="staticText" uuid="b43c535e-92b5-4b13-b9e8-66e419a8d7d6" x="40" y="10" width="150" height="30" fontSize="20.0">
+			<text><![CDATA[Name]]></text>
+		</element>
+		<element kind="staticText" uuid="8f9cf8ed-5af4-4289-ab79-eb5f5e0ca28e" x="210" y="10" width="150" height="30" fontSize="20.0">
+			<text><![CDATA[Contact Number]]></text>
+		</element>
+		<element kind="staticText" uuid="1a975c32-7a68-48b3-8de5-5781ee8b2db2" x="380" y="10" width="150" height="30" fontSize="20.0">
+			<text><![CDATA[Registerd Date]]></text>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<element kind="textField" uuid="7358825b-e5b5-470b-ae56-b16a906a8266" x="40" y="10" width="150" height="30">
+				<expression><![CDATA[$F{c_name}]]></expression>
+			</element>
+			<element kind="textField" uuid="2c9c97a3-ac09-462a-a150-c655cdfc3ff5" x="210" y="10" width="150" height="30">
+				<expression><![CDATA[$F{c_number}]]></expression>
+			</element>
+			<element kind="textField" uuid="979ab50a-d9e9-4b8d-b039-bb4247030cca" x="380" y="10" width="150" height="30">
+				<expression><![CDATA[$F{reg_date}]]></expression>
+			</element>
+		</band>
+	</detail>
+	<columnFooter splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch">
+		<element kind="staticText" uuid="6bcf0f0f-35d4-4e5d-8e31-400f1473343b" x="430" y="10" width="100" height="30" fontSize="15.0">
+			<text><![CDATA[Thank You !]]></text>
+		</element>
+	</pageFooter>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>

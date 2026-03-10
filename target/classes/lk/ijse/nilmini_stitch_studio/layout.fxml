@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="800" prefWidth="1500" stylesheets="@css/sideNav.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.nilmini_stitch_studio.controller.LayoutController">
+
+    <!-- SIDEBAR -->
+    <left>
+        <VBox fx:id="sideNavVBox" spacing="10" styleClass="sidebar">
+
+            <padding>
+                <Insets bottom="15" left="15" right="15" top="25" />
+            </padding>
+
+            <!-- LOGO -->
+            <ImageView fitHeight="70" preserveRatio="true">
+                <image>
+                    <Image url="@images/logo crop.png" />
+                </image>
+            </ImageView>
+
+            <Text styleClass="title" text="Nilmini Stitch Studio" />
+
+            <!-- NAVIGATION BUTTONS -->
+
+            <Button fx:id="btnCustomer" alignment="CENTER_LEFT" maxWidth="Infinity" onAction="#clickCustomer" styleClass="side-btn" text="Customers">
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20">
+                        <image>
+                            <Image url="@images/customer.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <Button fx:id="btnOrder" alignment="CENTER_LEFT" maxWidth="Infinity" onAction="#clickOrder" styleClass="side-btn" text="Orders">
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20">
+                        <image>
+                            <Image url="@images/order.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <Button fx:id="btnItem" alignment="CENTER_LEFT" maxWidth="Infinity" onAction="#clickItem" styleClass="side-btn" text="Items">
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20">
+                        <image>
+                            <Image url="@images/items.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <Button fx:id="btnPayment" alignment="CENTER_LEFT" maxWidth="Infinity" onAction="#clickPayment" styleClass="side-btn" text="Payments">
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20">
+                        <image>
+                            <Image url="@images/payment.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <Button fx:id="btnStock" alignment="CENTER_LEFT" maxWidth="Infinity" onAction="#clickStock" styleClass="side-btn" text="Stock">
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20">
+                        <image>
+                            <Image url="@images/stock.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <Button fx:id="btnSupplier" alignment="CENTER_LEFT" maxWidth="Infinity" onAction="#clickSupplier" styleClass="side-btn" text="Suppliers">
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20">
+                        <image>
+                            <Image url="@images/supplier.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <!-- PUSH LOGOUT TO BOTTOM -->
+            <VBox VBox.vgrow="ALWAYS" />
+
+            <Button fx:id="btnBack" alignment="CENTER_LEFT" maxWidth="Infinity" onAction="#clickBack" styleClass="logout-btn" text="Log Out">
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20">
+                        <image>
+                            <Image url="@images/needle.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+        </VBox>
+    </left>
+
+    <!-- MAIN CONTENT AREA -->
+    <center>
+        <AnchorPane fx:id="mainContent" prefHeight="800.0" prefWidth="1229.0" styleClass="content-area" />
+    </center>
+
+</BorderPane>

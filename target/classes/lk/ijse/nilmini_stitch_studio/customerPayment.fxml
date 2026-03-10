@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="mainContent" prefHeight="729.6" prefWidth="1270.4" style="-fx-background-color:#f3f4f6;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.nilmini_stitch_studio.controller.CustomerPaymentController">
+
+    <!-- Header -->
+    <HBox alignment="CENTER_LEFT" prefHeight="60" style="-fx-background-color:white; -fx-border-color:#e5e7eb; -fx-border-width:0 0 1 0;" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+        <children>
+         <Button mnemonicParsing="false" style="-fx-background-color: none;" text="Payment">
+            <font>
+               <Font name="System Bold" size="25.0" />
+            </font>
+         </Button>
+            <Text style="-fx-font-size:26px; -fx-font-weight:bold;" text="&gt;  Customer Payment" />
+        </children>
+    </HBox>
+
+    <!-- Main Content -->
+    <GridPane hgap="20" vgap="20" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="80">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="35" />
+            <ColumnConstraints percentWidth="65" />
+        </columnConstraints>
+
+        <!-- LEFT CARD: Input Fields -->
+        <VBox prefHeight="729.0" prefWidth="414.0" spacing="15" style="-fx-background-color:white; -fx-background-radius:12; -fx-padding:20;" GridPane.columnIndex="0">
+            <Text style="-fx-font-size:16px; -fx-font-weight:bold;" text="Customer Details" />
+
+            <Text style="-fx-font-weight:bold;" text="Customer ID :" />
+         <ComboBox fx:id="comboCustomerId" onAction="#selectComboCustomerID" prefHeight="26.0" prefWidth="346.0" />
+         <Text style="-fx-font-weight:bold;" text="Name :" />
+         <Label fx:id="lblCustomerNameValue" style="-fx-font-size:15px; -fx-font-weight:bold;" text="-" />
+         <HBox alignment="TOP_RIGHT" spacing="10">
+            <children>
+               <Button style="-fx-background-color:#dc2626; -fx-text-fill:white;" text="Print" />
+            </children>
+         </HBox>
+        </VBox>
+
+        <!-- RIGHT CARD: Table -->
+        <VBox spacing="10" style="-fx-background-color:white; -fx-background-radius:12; -fx-padding:20;" GridPane.columnIndex="1">
+            <Text style="-fx-font-size:16px; -fx-font-weight:bold;" text="Payment Records" />
+
+            <TableView fx:id="tblCustomerPayments" prefHeight="392.0" prefWidth="623.0" style="-fx-background-color:#E9ECEF;" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colCustomerName" minWidth="0.0" prefWidth="0.0" text="Name" />
+                    <TableColumn fx:id="colCustomerDetails" prefWidth="272.800048828125" text="Details" />
+               <TableColumn fx:id="colCustomerDate" prefWidth="250.39996337890625" text="Date" />
+                    <TableColumn fx:id="colCustomerAmount" prefWidth="228.800048828125" text="Amount" />
+                </columns>
+            </TableView>
+         <Label text="Total Price">
+            <font>
+               <Font size="15.0" />
+            </font>
+         </Label>
+         <Label fx:id="lblOrderTotal" style="-fx-text-fill:#1d4ed8; -fx-font-weight:bold;" text="-">
+            <font>
+               <Font size="15.0" />
+            </font>
+         </Label>
+        </VBox>
+
+        <rowConstraints>
+            <RowConstraints />
+        </rowConstraints>
+    </GridPane>
+</AnchorPane>

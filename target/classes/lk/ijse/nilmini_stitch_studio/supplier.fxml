@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="729.6" prefWidth="1270.4" style="-fx-background-color:#f3f4f6;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.nilmini_stitch_studio.controller.SupplierController">
+
+    <!-- ================= HEADER ================= -->
+    <HBox alignment="CENTER_LEFT" prefHeight="60" style="-fx-background-color:white; -fx-border-color:#e5e7eb; -fx-border-width:0 0 1 0;" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+        <children>
+            <Text style="-fx-font-size:26px; -fx-font-weight:bold;" text=" Supplier Management" />
+        </children>
+    </HBox>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <GridPane hgap="20" vgap="20" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="80">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="35" />
+            <ColumnConstraints percentWidth="65" />
+        </columnConstraints>
+
+        <!-- ========== LEFT CARD : SUPPLIER FORM ========== -->
+        <VBox spacing="20" style="-fx-background-color:white; -fx-background-radius:12; -fx-padding:20;" GridPane.columnIndex="0">
+            <Text style="-fx-font-size:16px; -fx-font-weight:bold;" text="Supplier Details" />
+
+            <VBox spacing="8">
+                <Label text="Name" />
+                <TextField fx:id="supplierName" promptText="Enter Supplier Name" />
+            </VBox>
+
+            <VBox spacing="8">
+                <Label text="Category" />
+                <TextField fx:id="supplierCatogory" promptText="Enter Category" />
+            </VBox>
+
+            <VBox spacing="8">
+                <Label text="Price" />
+                <TextField fx:id="supplierPrice" promptText="Enter Price" />
+            </VBox>
+
+            <VBox spacing="8">
+                <Label text="Contact Number" />
+                <TextField fx:id="supplierNumber" promptText="Enter Contact Number" />
+            </VBox>
+
+            <HBox alignment="TOP_RIGHT" spacing="10">
+                <Button onAction="#handleSupplierReset" style="-fx-background-color:#6b7280; -fx-text-fill:white;" text="Reset" />
+                <Button onAction="#saveSupplier" style="-fx-background-color:#16a34a; -fx-text-fill:white;" text="Save" />
+                <Button onAction="#handleSupplierUpdate" style="-fx-background-color:#2563eb; -fx-text-fill:white;" text="Update" />
+            </HBox>
+
+            <HBox alignment="TOP_RIGHT">
+                <Button onAction="#handlePrint" style="-fx-background-color:#dc2626; -fx-text-fill:white;" text="Print" />
+            </HBox>
+        </VBox>
+
+        <!-- ========== RIGHT CARD : SUPPLIER TABLE ========== -->
+        <VBox prefHeight="680.0" prefWidth="786.0" spacing="15" style="-fx-background-color:white; -fx-background-radius:12; -fx-padding:20;" GridPane.columnIndex="1">
+            <Text style="-fx-font-size:16px; -fx-font-weight:bold;" text="Supplier List" />
+
+            <TableView fx:id="tableSupplier" VBox.vgrow="ALWAYS" style="-fx-background-color:#E9ECEF;">
+                <columns>
+                    <TableColumn fx:id="colName" prefWidth="150" text="Name" />
+                    <TableColumn fx:id="colCatogory" prefWidth="120" text="Category" />
+                    <TableColumn fx:id="colPrice" prefWidth="100" text="Buying Price" />
+                    <TableColumn fx:id="colNumber" prefWidth="150" text="Contact Number" />
+                    <TableColumn fx:id="colDate" prefWidth="150" text="Registered Date" />
+                    <TableColumn fx:id="colAction" prefWidth="100" text="Action" />
+                </columns>
+            </TableView>
+        </VBox>
+
+        <rowConstraints>
+            <RowConstraints />
+        </rowConstraints>
+    </GridPane>
+</AnchorPane>
